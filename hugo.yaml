@@ -1,0 +1,71 @@
+baseURL: "https://huawanrr.github.io/"
+title: "huawan 的技术笔记"
+theme: "PaperMod"
+locale: "zh-CN"
+defaultContentLanguage: "zh"
+defaultContentLanguageInSubdir: true
+hasCJKLanguage: true
+enableRobotsTXT: true
+enableEmoji: true
+pagination:
+  pagerSize: 10
+languages:
+  zh:
+    label: "中文"
+    locale: "zh-CN"
+    weight: 1
+    title: "huawan 的技术笔记"
+    menu:
+      main:
+        - {name: "文章", url: "/zh/posts/", weight: 10}
+        - {name: "关于我", url: "/zh/about/", weight: 20}
+        - {name: "归档", url: "/zh/archives/", weight: 30}
+        - {name: "搜索", url: "/zh/search/", weight: 40}
+        - {name: "标签", url: "/zh/tags/", weight: 50}
+outputs:
+  home: [HTML, RSS, JSON]
+params:
+  env: "production"
+  description: "记录代码阅读、学习笔记和工程实践。"
+  author: "huawan"
+  defaultTheme: "auto"
+  assets:
+    favicon: "/favicon.svg"
+    favicon16x16: "/icon-16.png"
+    favicon32x32: "/icon-32.png"
+    apple_touch_icon: "/icon-180.png"
+    safari_pinned_tab: "/favicon.svg"
+  DateFormat: "2006年1月2日"
+  mainSections: ["posts"]
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: true
+  comments: false
+  hideSummary: false
+  homeInfoParams:
+    Title: "huawan 的技术笔记"
+    Content: "把问题想清楚，把代码读明白。记录学习过程中的理解、实践与复盘。"
+  socialIcons:
+    - {name: "github", url: "https://github.com/huawanrr"}
+    - {name: "rss", url: "/zh/index.xml"}
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    minMatchCharLength: 1
+    threshold: 0.4
+    keys: ["title", "permalink", "summary", "content"]
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+  goldmark:
+    renderer:
+      unsafe: false
+caches:
+  images:
+    dir: ":cacheDir/images"
