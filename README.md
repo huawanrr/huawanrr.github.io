@@ -4,6 +4,8 @@
 
 使用 Hugo + PaperMod + GitHub Pages。推送到 `main` 后，GitHub Actions 自动构建并发布。
 
+外观采用简洁的英伦书刊风格：暖白纸色、衬线标题、细线分隔和少量酒红点缀。默认浅色，可手动切换深色。
+
 ## 直接在 GitHub 发文章
 
 1. 打开仓库 `content/posts` 目录，选择 **Add file → Create new file**。
@@ -52,6 +54,7 @@ categories: ["编程"]
 | 关于我 | `content/about.md` |
 | 文章 | `content/posts/` |
 | 字体、间距等样式 | `assets/css/extended/custom.css` |
+| 书刊报头、导航和主题切换按钮 | `layouts/_partials/header.html` |
 | 自动部署 | `.github/workflows/hugo.yaml` |
 
 ## 本地预览

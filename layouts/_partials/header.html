@@ -1,0 +1,25 @@
+<header class="header journal-header">
+  <div class="masthead">
+    <div class="masthead-top">
+      <span class="journal-caption">A personal technical journal</span>
+      {{- if not site.Params.disableThemeToggle }}
+      <button id="theme-toggle" class="theme-toggle" accesskey="t" title="切换深浅色 (Alt + T)" aria-label="切换深浅色">
+        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/></svg>
+      </button>
+      {{- end }}
+    </div>
+    <a class="journal-title" href="{{ "" | absLangURL }}" accesskey="h">{{ site.Title }}</a>
+    <p class="journal-subtitle">代码阅读 <span aria-hidden="true">·</span> 学习笔记 <span aria-hidden="true">·</span> 工程实践</p>
+    <nav class="journal-nav" aria-label="主导航">
+      <ul id="menu" class="menu">
+        {{- $current := . }}
+        {{- range site.Menus.main }}
+        {{- $url := .URL | absLangURL }}
+        {{- $active := or (eq $url $current.Permalink) (and (ne $current.Kind "home") (strings.HasPrefix $current.Permalink $url)) }}
+        <li><a href="{{ $url }}"{{ if $active }} aria-current="page"{{ end }}><span{{ if $active }} class="active"{{ end }}>{{ .Name }}</span></a></li>
+        {{- end }}
+      </ul>
+    </nav>
+  </div>
+</header>
